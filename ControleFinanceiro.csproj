@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FinappXunit\**" />
     <Compile Remove="NewFolder1\**" />
     <Compile Remove="pasta1\**" />
     <EmbeddedResource Remove="NewFolder1\**" />

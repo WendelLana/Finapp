@@ -70,14 +70,26 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <StackPanel Margin="5">
-            <Label 
-                Name="TitleLabel" 
-                FontWeight="Bold"            
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                Margin="5"
-                />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="5,5,5,5" Grid.ColumnSpan="2">
+            <Grid Name="TitleGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Name="TitleLabel" FontWeight="Bold" HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" Margin="0 5 0 5" Grid.Row="0" Grid.Column="0" />
+                <CheckBox Content="Entrada Recorrente" Grid.Row="0" Grid.Column="1" 
+                    VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 5 0 5" 
+                    x:Name="RecorrenteCBox" Click="Recorrente_Click">
+                </CheckBox>
+            </Grid>
 
             <Grid Name="IncomeGrid">
                 <Grid.RowDefinitions>
@@ -93,13 +105,14 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Content="Data" />
+                <Label Grid.Row="0" Grid.Column="0" Content="Data" x:Name="DateLabel" />
                 <xctk:DateTimePicker
                     Grid.Row="0" Grid.Column="1"
                     Value="{Binding date}"
                     Format="Custom"
                     FormatString="dd/MM/yyyy HH:mm tt"
                     TextAlignment="Left"
+                    x:Name="DatePicker"
                     />
 
                 <Label Grid.Row="1" Grid.Column="0" Content="Valor" />

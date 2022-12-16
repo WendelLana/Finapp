@@ -15,6 +15,7 @@ using ControleFinanceiro.models;
 using ControleFinanceiro.controllers;
 using MahApps.Metro.IconPacks;
 using System.Text.RegularExpressions;
+using System.Data;
 
 namespace ControleFinanceiro.views
 {
@@ -88,6 +89,7 @@ namespace ControleFinanceiro.views
                 Transaction newIncome = IncomeGrid.DataContext as Transaction;
                 newIncome = IncomeGrid.DataContext as Transaction;
                 newIncome.categoryId = selectedCategory.id;
+                newIncome.recorrente = RecorrenteCBox.IsChecked ?? false;
                 parentView.AddIncome(newIncome);
             }
             else if (typeAction.Equals("editar"))
@@ -95,6 +97,7 @@ namespace ControleFinanceiro.views
                 Transaction editIncome = IncomeGrid.DataContext as Transaction;
                 editIncome = IncomeGrid.DataContext as Transaction;
                 editIncome.categoryId = selectedCategory.id;
+                editIncome.recorrente = RecorrenteCBox.IsChecked ?? false;
                 parentView.EditIncome(editIncome);
             }
             else
@@ -104,6 +107,20 @@ namespace ControleFinanceiro.views
             Close();
         }
 
+        private void Recorrente_Click(object sender, RoutedEventArgs e)
+        {
+            bool recorrenteClicked = RecorrenteCBox.IsChecked ?? false;
+            if (recorrenteClicked)
+            {
+                DatePicker.FormatString = "MM / yyyy";
+                DateLabel.Content = "Mês de Início";
+            }
+            else
+            {
+                DatePicker.FormatString = "dd/MM/yyyy HH:mm tt";
+                DateLabel.Content = "Data";
+            }
+        }
         private void PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9.]+");

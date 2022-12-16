@@ -15,7 +15,13 @@ namespace ControleFinanceiro.controllers
         public CategoryController(Context context)
         {
             _context = context;
-            _mainWindow = (MainWindow)System.Windows.Application.Current.MainWindow;
+            try
+            {
+                _mainWindow = (MainWindow)System.Windows.Application.Current.MainWindow;
+            } catch (Exception e)
+            {
+
+            }
         }
 
         public List<Category> GetAll()
@@ -38,7 +44,7 @@ namespace ControleFinanceiro.controllers
         {
             _context.Categories.Remove(category);
             _context.SaveChanges();
-            _mainWindow.updateBalanceText();
+            if (_mainWindow != null) _mainWindow.updateBalanceText();
             return true;
         }
 

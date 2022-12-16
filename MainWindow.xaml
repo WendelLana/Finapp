@@ -104,27 +104,96 @@
             Grid.Row="0" 
             Grid.Column="0"
         >
-            <StackPanel 
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="0 0 0 20"
-                Grid.Row="0" 
-                Grid.Column="0"
-            >
-                <TextBlock 
-                    FontWeight="Bold"
-                    FontSize="32"
-                    Padding="0 0 0 10"
-                >Saldo</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="220"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="220 0 0 20">
+                    <StackPanel 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                    >
+                        <TextBlock 
+                            FontWeight="Bold"
+                            FontSize="26"
+                            HorizontalAlignment="Center"
+                        >Saldo</TextBlock>
 
-                <TextBlock 
-                    Name="SaldoText"
-                    Grid.Row="0" 
-                    Grid.Column="0"
-                    Foreground="Green"
-                    FontSize="24"
-                >R$1000,00</TextBlock>
-            </StackPanel>
+                        <TextBlock 
+                            Name="SaldoText"
+                            Foreground="Green"
+                            FontSize="24"
+                        >R$1000,00</TextBlock>
+                    </StackPanel>
+                    <Rectangle Name="SaldoSeparator" VerticalAlignment="Stretch" Width="1" 
+                        Margin="6 6 6 6" Stroke="Gray"></Rectangle>
+                    <StackPanel 
+                        Name="SaldoMesStack"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                    >
+                        <TextBlock 
+                            FontWeight="Bold"
+                            FontSize="26"
+                            HorizontalAlignment="Center"
+                        >Saldo do Mês</TextBlock>
+
+                        <TextBlock 
+                            HorizontalAlignment="Center"
+                            Name="SaldoMesText"
+                            Foreground="Green"
+                            FontSize="24"
+                        >R$1000,00</TextBlock>
+                    </StackPanel>
+                    <Rectangle Name="SaldoSeparator2" VerticalAlignment="Stretch" Width="1" 
+                        Margin="6 6 6 6" Stroke="Gray" Visibility="Collapsed"></Rectangle>
+                    <StackPanel 
+                        Name="SaldoRestanteStack"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="Collapsed"
+                    >
+                        <TextBlock 
+                            FontWeight="Bold"
+                            FontSize="26"
+                            HorizontalAlignment="Center"
+                        >Saldo Restante</TextBlock>
+
+                        <TextBlock 
+                            HorizontalAlignment="Center"
+                            Name="SaldoRestanteText"
+                            Foreground="Green"
+                            FontSize="24"
+                        >R$1000,00</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel 
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0 0 20 20"
+                >
+                    <TextBlock 
+                        FontWeight="Normal"
+                        FontSize="26"
+                        Padding="0 0 0 10"
+                    >Meta Mensal</TextBlock>
+
+                    <TextBox Name="MetaTextBox" FontSize="24" MaxWidth="160" 
+                        TextChanged="TextBox_TextChanged" PreviewTextInput="TextBox_PreviewTextInput"/>
+                </StackPanel>
+            </Grid>
         </Border>
 
         <Grid>

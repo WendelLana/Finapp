@@ -15,6 +15,7 @@ namespace ControleFinanceiro.models
         public Guid categoryId { get; set; } = Guid.Empty;
         public Category Category { get; set; }
         public string transactionType { get; set; } = string.Empty;
+        public bool recorrente { get; set; } = false;
 
         public Transaction() { }
     }

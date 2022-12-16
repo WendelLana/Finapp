@@ -34,7 +34,6 @@ namespace ControleFinanceiro
         private void OnStartup(object s, StartupEventArgs e)
         {
             var mainWindow = serviceProvider.GetService<MainWindow>();
-
             mainWindow.Show();
         }
     }

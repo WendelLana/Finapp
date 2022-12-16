@@ -34,6 +34,7 @@ namespace ControleFinanceiro.views
         private void GetIncomes()
         {
             IncomeTable.ItemsSource = controller.GetAll().OrderByDescending(i => i.date);
+            RecurrentIncomeTable.ItemsSource = controller.GetAllRecurrent().OrderByDescending(i => i.date);
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)

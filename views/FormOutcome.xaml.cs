@@ -43,6 +43,8 @@ namespace ControleFinanceiro.views
             _controller = parentView.GetOutcomeController();
             TitleLabel.Content = titleLabel;
             OutcomeGrid.DataContext = data;
+            if (data.recorrente)
+                RecorrenteCBox.IsChecked = true;
 
             var availablesCategories = _controller.GetAvailableCategories();
 
@@ -95,6 +97,7 @@ namespace ControleFinanceiro.views
                 Transaction newOutcome = OutcomeGrid.DataContext as Transaction;
                 newOutcome = OutcomeGrid.DataContext as Transaction;
                 newOutcome.categoryId = selectedCategory.id;
+                newOutcome.recorrente = RecorrenteCBox.IsChecked ?? false;
                 parentView.AddOutcome(newOutcome);
             }
             else if (typeAction.Equals("editar"))
@@ -102,6 +105,7 @@ namespace ControleFinanceiro.views
                 Transaction editOutcome = OutcomeGrid.DataContext as Transaction;
                 editOutcome = OutcomeGrid.DataContext as Transaction;
                 editOutcome.categoryId = selectedCategory.id;
+                editOutcome.recorrente = RecorrenteCBox.IsChecked ?? false;
                 parentView.EditOutcome(editOutcome);
             }
             else
@@ -109,6 +113,21 @@ namespace ControleFinanceiro.views
                 //error
             }
             Close();
+        }
+
+        private void Recorrente_Click(object sender, RoutedEventArgs e)
+        {
+            bool recorrenteClicked = RecorrenteCBox.IsChecked ?? false;
+            if(recorrenteClicked)
+            {
+                DatePicker.FormatString = "MM / yyyy";
+                DateLabel.Content = "Mês de Início";
+            }
+            else
+            {
+                DatePicker.FormatString = "dd/MM/yyyy HH:mm tt";
+                DateLabel.Content = "Data";
+            }
         }
 
         private void PreviewTextInput(object sender, TextCompositionEventArgs e)

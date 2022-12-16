@@ -16,7 +16,14 @@ namespace ControleFinanceiro.controllers
 
         public List<Transaction> GetAll()
         {
-            return _context.Transactions.Where(obj => obj.transactionType == "O").Include("Category").ToList();
+            return _context.Transactions.Where(obj => obj.transactionType == "O" && !obj.recorrente)
+                .Include("Category").ToList();
+        }
+
+        public List<Transaction> GetAllRecurrent()
+        {
+            return _context.Transactions.Where(obj => obj.transactionType == "O" && obj.recorrente)
+                .Include("Category").ToList();
         }
 
         public List<Category> GetAvailableCategories()

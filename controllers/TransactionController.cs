@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using ControleFinanceiro.models;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,13 +17,30 @@ namespace ControleFinanceiro.controllers
         public TransactionController(Context context)
         {
             _context = context;
-            _mainWindow = (MainWindow)System.Windows.Application.Current.MainWindow;
+            try
+            {
+                _mainWindow = (MainWindow)Application.Current.MainWindow;
+            } catch (Exception e)
+            {
+
+            }
         }
 
         public List<Transaction> GetAll()
         {
-            return _context.Transactions.Include("Category").ToList();
+            return _context.Transactions.Where(t => !t.recorrente).Include("Category").ToList();
         }
+
+        public List<Transaction> GetAllRecurrent()
+        {
+            return _context.Transactions.Where(t => t.recorrente).Include("Category").ToList();
+        }
+
+        public List<Transaction> GetAllTransactionsOnly()
+        {
+            return _context.Transactions.ToList();
+        }
+
         public Transaction GetById(Guid id)
         {
             return _context.Transactions.FirstOrDefault(obj => obj.id == id);
@@ -29,9 +48,14 @@ namespace ControleFinanceiro.controllers
 
         public bool Add(Transaction transaction)
         {
+            if(transaction.recorrente)
+            {
+                transaction.date = new DateTime(transaction.date.Year, transaction.date.Month,
+                    DateTime.DaysInMonth(transaction.date.Year, transaction.date.Month), 23, 59, 59);
+            }
             _context.Transactions.Add(transaction);
             _context.SaveChanges();
-            _mainWindow.updateBalanceText();
+            if (_mainWindow != null) _mainWindow.updateBalanceText();
             return true;
         }
 
@@ -39,7 +63,7 @@ namespace ControleFinanceiro.controllers
         {
             _context.Transactions.Remove(transation);
             _context.SaveChanges();
-            _mainWindow.updateBalanceText();
+            if (_mainWindow != null) _mainWindow.updateBalanceText();
             return true;
         }
 
@@ -47,7 +71,7 @@ namespace ControleFinanceiro.controllers
         {
             _context.Transactions.Update(transation);
             _context.SaveChanges();
-            _mainWindow.updateBalanceText();
+            if (_mainWindow != null) _mainWindow.updateBalanceText();
             return true;
         }
 
@@ -58,7 +82,33 @@ namespace ControleFinanceiro.controllers
 
             items.ForEach(obj =>
             {
-                balance += obj.transactionType == "I" ? Convert.ToDecimal(obj.value) : -Convert.ToDecimal(obj.value);
+                if(obj.recorrente)
+                {
+                    var date1 = DateTime.Now; var date2 = obj.date;
+                    var value = (((date1.Year - date2.Year) * 12) + date1.Month - date2.Month + 1) * obj.value;
+                    balance += obj.transactionType == "I" ?
+                        Convert.ToDecimal(value) : -Convert.ToDecimal(value);
+                }
+                else
+                {
+                    balance += obj.transactionType == "I" ?
+                        Convert.ToDecimal(obj.value) : -Convert.ToDecimal(obj.value);
+                }
+            });
+
+            return balance;
+        }
+
+        public decimal GetBalanceMonth()
+        {
+            decimal balance = 0;
+            var items = _context.Transactions.Where(t => t.date.Month == DateTime.Now.Month || t.recorrente)
+                .ToList();
+
+            items.ForEach(obj =>
+            {
+                balance += obj.transactionType == "I" ?
+                    Convert.ToDecimal(obj.value) : -Convert.ToDecimal(obj.value);
             });
 
             return balance;

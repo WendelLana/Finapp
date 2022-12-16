@@ -28,15 +28,20 @@ namespace ControleFinanceiro
         private readonly Context context;
         private readonly TransactionController _transactionController;
         public Decimal balance { get; set; }
+        public Decimal monthBalance { get; set; }
 
         public void updateBalanceText()
         {
             this.balance = _transactionController.GetBalance();
             SaldoText.Text = $"R${string.Format("{0:0.00}", Convert.ToDecimal(this.balance))}";
+            this.monthBalance = _transactionController.GetBalanceMonth();
+            SaldoMesText.Text = $"R${string.Format("{0:0.00}", Convert.ToDecimal(this.monthBalance))}";
 
             var redBrush = (Brush)new BrushConverter().ConvertFromString("#FFFF0000");
             var greenBrush = (Brush)new BrushConverter().ConvertFromString("#FF008000");
             SaldoText.Foreground = this.balance >= 0 ? greenBrush : redBrush;
+
+            SaldoMesText.Foreground = this.monthBalance >= 0 ? greenBrush : redBrush;
         }
         public MainWindow(Context context)
         {
@@ -75,6 +80,35 @@ namespace ControleFinanceiro
         private void ChartIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DataContext = new Chart(context);
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = ((TextBox)sender).Text;
+            if(text == "")
+            {
+                SaldoSeparator2.Visibility = Visibility.Collapsed;
+                SaldoRestanteStack.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                SaldoSeparator2.Visibility = Visibility.Visible;
+                SaldoRestanteStack.Visibility = Visibility.Visible;
+
+                var saldoRestante = this.monthBalance - Convert.ToDecimal(MetaTextBox.Text);
+                SaldoRestanteText.Text = $"R${string.Format("{0:0.00}", Convert.ToDecimal(saldoRestante))}";
+
+                var redBrush = (Brush)new BrushConverter().ConvertFromString("#FFFF0000");
+                var greenBrush = (Brush)new BrushConverter().ConvertFromString("#FF008000");
+                SaldoRestanteText.Foreground = saldoRestante >= 0 ? greenBrush : redBrush;
+            }
+        }
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            string str = ((TextBox)sender).Text + e.Text;
+            decimal i;
+            e.Handled = !decimal.TryParse(str, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out i);
         }
     }
 }
