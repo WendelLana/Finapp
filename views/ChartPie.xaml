@@ -22,11 +22,11 @@
             Grid.Row="0"
             Grid.Column="0"
             >
-            <Label FontWeight="Bold" Content="Entradas"/>
+            <Label FontWeight="Bold" Content="Income"/>
             <lvc:PieChart 
-                x:Name="PieChartEntradaControl" 
+                x:Name="PieChartEntradaControl"
                 LegendLocation="Bottom" 
-                DataClick="Chart_OnDataClick" 
+                DataClick="Chart_OnDataClick"
                 Height="300"
                 Tag="Teste"
                 InnerRadius="20"
@@ -37,7 +37,7 @@
             Grid.Row="0"
             Grid.Column="1"
             >
-            <Label FontWeight="Bold" Content="Saidas"/>
+            <Label FontWeight="Bold" Content="Expenses"/>
             <lvc:PieChart 
                 x:Name="PieChartSaidaControl" 
                 LegendLocation="Bottom" 
@@ -48,10 +48,10 @@
         
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <Label FontWeight="Bold" Content="Filtros"/>
+            <Label FontWeight="Bold" Content="Filters"/>
             <StackPanel Orientation="Horizontal">
-                <RadioButton Content="Categoria" IsChecked="True" Checked="CategoryFilter_Checked" />
-                <RadioButton Margin="20 0 0 0" Content="Mês" Checked="MonthFilter_Checked"/>
+                <RadioButton Content="Category" IsChecked="True" Checked="CategoryFilter_Checked" />
+                <RadioButton Margin="20 0 0 0" Content="Month" Checked="MonthFilter_Checked"/>
             </StackPanel>
             
         </StackPanel>

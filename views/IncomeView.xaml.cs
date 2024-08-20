@@ -39,14 +39,14 @@ namespace ControleFinanceiro.views
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            var formWindow = new FormIncome("Cadastrar Entrada", new Transaction(), "cadastrar");
+            var formWindow = new FormIncome("New Income", new Transaction(), "cadastrar");
             formWindow.Show();
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             Transaction selectedIncome = (sender as FrameworkElement).DataContext as Transaction;
-            var gerenciarWindow = new FormIncome("Editar Entrada", selectedIncome, "editar");
+            var gerenciarWindow = new FormIncome("Edit Income", selectedIncome, "editar");
             gerenciarWindow.Show();
         }
 

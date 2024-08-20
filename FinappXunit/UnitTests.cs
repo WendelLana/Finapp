@@ -28,7 +28,7 @@ public class UnitTests
         Category category = new()
         {
             id = cId,
-            name = "Categoria 1",
+            name = "Category 1",
             pack = "PackIconMaterial",
             icon = "Car",
             color = "#FFFFFF",
@@ -40,7 +40,7 @@ public class UnitTests
         category = new()
         {
             id = cId2,
-            name = "Categoria 2",
+            name = "Category 2",
             pack = "PackIconMaterial",
             icon = "CreditCardOutline",
             color = "#FFFFFF",
@@ -66,12 +66,12 @@ public class UnitTests
 
         t = new Transaction();
         id = Guid.NewGuid();
-        t.id = id; t.date = new DateTime(2022, 6, 30, 23, 59, 59); t.value = 1500; t.description = "Aluguel"; t.categoryId = cId; t.transactionType = "O"; t.recorrente = true;
+        t.id = id; t.date = new DateTime(2022, 6, 30, 23, 59, 59); t.value = 1500; t.description = "Rent"; t.categoryId = cId; t.transactionType = "O"; t.recorrente = true;
         expectedList.Add(t);
 
         t = new Transaction();
         id = Guid.NewGuid();
-        t.id = id; t.date = new DateTime(2022, 9, 30, 23, 59, 59); t.value = 5000; t.description = "Salário"; t.categoryId = cId2; t.transactionType = "I"; t.recorrente = true;
+        t.id = id; t.date = new DateTime(2022, 9, 30, 23, 59, 59); t.value = 5000; t.description = "Paycheck"; t.categoryId = cId2; t.transactionType = "I"; t.recorrente = true;
         expectedList.Add(t);
 
         for (int i = 0; i < expectedList.Count; i++)
@@ -83,14 +83,14 @@ public class UnitTests
         Assert.Equal(retrievedList, expectedList);
 
         t.value = 8000;
-        t.description = "Novo Salário";
+        t.description = "New paycheck";
         transactionController.Update(t);
         Transaction checkTransaction = transactionController.GetById(t.id);
 
         Assert.Equal(checkTransaction.description, t.description);
         Assert.Equal(checkTransaction.value, t.value);
 
-        category.name = "Dev Pleno";
+        category.name = "Mid-Level Developer";
         category.color = "#2B36B3";
         categoryController.Update(category);
         Category checkCategory = categoryController.GetById(category.id);

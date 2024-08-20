@@ -40,7 +40,7 @@ namespace ControleFinanceiro.views
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             Category selectedCategory = (sender as FrameworkElement).DataContext as Category;
-            var formWindow = new FormCategory("Editar Categoria", selectedCategory, "editar");
+            var formWindow = new FormCategory("Edit Category", selectedCategory, "editar");
             formWindow.Show();
         }
 
@@ -53,7 +53,7 @@ namespace ControleFinanceiro.views
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            var formWindow = new FormCategory("Cadastrar Categoria", new Category(), "cadastrar");
+            var formWindow = new FormCategory("New Category", new Category(), "cadastrar");
             formWindow.Show();
         }
 

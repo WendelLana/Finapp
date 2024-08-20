@@ -25,7 +25,7 @@ public partial class ChartLine : UserControl
         {
             new LineSeries
             {
-                Title = "Gastos",
+                Title = "Expenses",
                 Values = new ChartValues<double>()
             }
         };

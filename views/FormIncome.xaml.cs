@@ -79,7 +79,7 @@ namespace ControleFinanceiro.views
             var selectedIndex = CategoriesComboBox.SelectedIndex;
             if (selectedIndex == -1 || Value.Text.Length == 0)
             {
-                MessageBox.Show("Por favor, selecione uma categoria e coloque um valor válido!", "Alerta", MessageBoxButton.OK);
+                MessageBox.Show("Please, select a category and enter a valid value!", "Alert", MessageBoxButton.OK);
                 return;
             }
             var selectedCategory = _controller.GetAvailableCategories()[selectedIndex];
@@ -113,12 +113,12 @@ namespace ControleFinanceiro.views
             if (recorrenteClicked)
             {
                 DatePicker.FormatString = "MM / yyyy";
-                DateLabel.Content = "Mês de Início";
+                DateLabel.Content = "Starting Date";
             }
             else
             {
                 DatePicker.FormatString = "dd/MM/yyyy HH:mm tt";
-                DateLabel.Content = "Data";
+                DateLabel.Content = "Date";
             }
         }
         private void PreviewTextInput(object sender, TextCompositionEventArgs e)

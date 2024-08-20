@@ -25,7 +25,7 @@ public partial class ChartColumn : UserControl
 
         PlotChart(DateTime.Now.Year);
 
-        Labels = new[] { "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez" };
+        Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
         Formatter = value => value.ToString("N");
 
         DataContext = this;

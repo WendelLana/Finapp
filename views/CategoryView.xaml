@@ -23,7 +23,7 @@
                 Grid.Column="0"
                 FontSize="18" 
                 FontWeight="Bold" 
-                >Categorias</TextBlock>
+                >Categories</TextBlock>
             <Button 
                 x:Name="AddBtn"
                 HorizontalAlignment="Right" 
@@ -33,7 +33,7 @@
                 Margin="0 0 10 0"
                 Padding="10 5 10 5"
                 Click="AddBtn_Click"
-                >Cadastrar</Button>
+                >Add New</Button>
         </Grid>
         
         <Grid>
@@ -52,7 +52,7 @@
                   IsSynchronizedWithCurrentItem="True">
                 <DataGrid.Columns>
                     
-                    <DataGridTemplateColumn Header="Tipo">
+                    <DataGridTemplateColumn Header="Type">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock
@@ -63,7 +63,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 
-                    <DataGridTemplateColumn Header="Nome">
+                    <DataGridTemplateColumn Header="Name">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock
@@ -74,7 +74,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="Cor">
+                    <DataGridTemplateColumn Header="Color">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock
@@ -86,7 +86,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="Ícone">
+                    <DataGridTemplateColumn Header="Icon">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <iconPacks:PackIconMaterial
@@ -100,7 +100,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="Ações">
+                    <DataGridTemplateColumn Header="Actions">
 
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -112,8 +112,8 @@
                                     <Grid.RowDefinitions>
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
-                                    <Button Margin="0 0 5 0" Grid.Row="0" Grid.Column="0" Content="Editar" Click="EditBtn_Click"/>
-                                    <Button Margin="5 0 0 0" Grid.Row="0" Grid.Column="1" Content="Remover" Click="RemoveBtn_Click"/>
+                                    <Button Margin="0 0 5 0" Grid.Row="0" Grid.Column="0" Content="Edit" Click="EditBtn_Click"/>
+                                    <Button Margin="5 0 0 0" Grid.Row="0" Grid.Column="1" Content="Remove" Click="RemoveBtn_Click"/>
                                 </Grid>
 
                             </DataTemplate>

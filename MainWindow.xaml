@@ -27,7 +27,7 @@
 
         <Style x:Key="MenuHomeWrapper" BasedOn="{StaticResource BaseMenuBorderWrapper}" TargetType="{x:Type Border}">
             <Setter Property="Margin" Value="0 0 0 40" />
-            <Setter Property="ToolTip" Value="Tela Principal" />
+            <Setter Property="ToolTip" Value="Main" />
             
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -41,7 +41,7 @@
 
         <Style x:Key="MenuCategoriaWrapper" BasedOn="{StaticResource BaseMenuBorderWrapper}" TargetType="{x:Type Border}">
             <Setter Property="Margin" Value="0 0 0 40" />
-            <Setter Property="ToolTip" Value="Gerenciar Categorias" />
+            <Setter Property="ToolTip" Value="Manage Categories" />
 
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -55,7 +55,7 @@
 
         <Style x:Key="MenuEntradaWrapper" BasedOn="{StaticResource BaseMenuBorderWrapper}" TargetType="{x:Type Border}">
             <Setter Property="Margin" Value="0 0 0 40" />
-            <Setter Property="ToolTip" Value="Realizar Entrada" />
+            <Setter Property="ToolTip" Value="Add Income" />
             
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -82,7 +82,7 @@
         </Style>
 
         <Style x:Key="MenuGraficosWrapper" BasedOn="{StaticResource BaseMenuBorderWrapper}" TargetType="{x:Type Border}">
-            <Setter Property="ToolTip" Value="Visualizar Gráficos" />
+            <Setter Property="ToolTip" Value="View Charts" />
             
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -123,13 +123,13 @@
                             FontWeight="Bold"
                             FontSize="26"
                             HorizontalAlignment="Center"
-                        >Saldo</TextBlock>
+                        >Balance</TextBlock>
 
                         <TextBlock 
                             Name="SaldoText"
                             Foreground="Green"
                             FontSize="24"
-                        >R$1000,00</TextBlock>
+                        >$1000,00</TextBlock>
                     </StackPanel>
                     <Rectangle Name="SaldoSeparator" VerticalAlignment="Stretch" Width="1" 
                         Margin="6 6 6 6" Stroke="Gray"></Rectangle>
@@ -144,14 +144,14 @@
                             FontWeight="Bold"
                             FontSize="26"
                             HorizontalAlignment="Center"
-                        >Saldo do Mês</TextBlock>
+                        >Monthly Balance</TextBlock>
 
                         <TextBlock 
                             HorizontalAlignment="Center"
                             Name="SaldoMesText"
                             Foreground="Green"
                             FontSize="24"
-                        >R$1000,00</TextBlock>
+                        >$1000,00</TextBlock>
                     </StackPanel>
                     <Rectangle Name="SaldoSeparator2" VerticalAlignment="Stretch" Width="1" 
                         Margin="6 6 6 6" Stroke="Gray" Visibility="Collapsed"></Rectangle>
@@ -167,14 +167,14 @@
                             FontWeight="Bold"
                             FontSize="26"
                             HorizontalAlignment="Center"
-                        >Saldo Restante</TextBlock>
+                        >Remaining Balance</TextBlock>
 
                         <TextBlock 
                             HorizontalAlignment="Center"
                             Name="SaldoRestanteText"
                             Foreground="Green"
                             FontSize="24"
-                        >R$1000,00</TextBlock>
+                        >$1000,00</TextBlock>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel 
@@ -188,7 +188,7 @@
                         FontWeight="Normal"
                         FontSize="26"
                         Padding="0 0 0 10"
-                    >Meta Mensal</TextBlock>
+                    >Monthly Goal</TextBlock>
 
                     <TextBox Name="MetaTextBox" FontSize="24" MaxWidth="160" 
                         TextChanged="TextBox_TextChanged" PreviewTextInput="TextBox_PreviewTextInput"/>
@@ -264,7 +264,7 @@
                                     Height="40"
                                     Foreground="CadetBlue"
                                 />
-                                <TextBlock VerticalAlignment="Center" Padding="5">Categoria</TextBlock>
+                                <TextBlock VerticalAlignment="Center" Padding="5">Category</TextBlock>
                             </StackPanel>
                         </Border>
 
@@ -281,7 +281,7 @@
                                     Height="40"
                                     Foreground="DarkGreen"
                                 />
-                                <TextBlock VerticalAlignment="Center" Padding="5">Entrada</TextBlock>
+                                <TextBlock VerticalAlignment="Center" Padding="5">Income</TextBlock>
                             </StackPanel>
                         </Border>
                         
@@ -299,7 +299,7 @@
                                     Padding="5"
                                     Foreground="Red"
                                 />
-                                <TextBlock VerticalAlignment="Center" Padding="5">Saída</TextBlock>
+                                <TextBlock VerticalAlignment="Center" Padding="5">Expense</TextBlock>
                             </StackPanel>
                         </Border>
 
@@ -316,7 +316,7 @@
                                     Padding="5"
                                     Foreground="Black"
                                 />
-                                <TextBlock VerticalAlignment="Center" Padding="5">Gráficos</TextBlock>
+                                <TextBlock VerticalAlignment="Center" Padding="5">Charts</TextBlock>
                             </StackPanel>
                         </Border>
                         

@@ -14,12 +14,12 @@
         <Grid Margin="0 0 0 14">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="65"/>
                 <ColumnDefinition Width="160"/>
-                <ColumnDefinition Width="41"/>
+                <ColumnDefinition Width="65"/>
                 <ColumnDefinition Width="160"/>
                 <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="63"/>
+                <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -32,17 +32,17 @@
                 Grid.Column="0"
                 FontSize="18" 
                 FontWeight="Bold" 
-                >Últimas movimentações:</TextBlock>
-            <Label Content="Início:" Grid.Row="0" Grid.Column="1" />
+                >Recent Transactions:</TextBlock>
+            <Label Content="Start date:" Grid.Row="0" Grid.Column="1" />
             <xctk:DateTimePicker Grid.Row="0" Grid.Column="2" ValueChanged="DateChanged"
                     x:Name="DateStart" Format="Custom" FormatString="dd/MM/yyyy HH:mm tt" TextAlignment="Left" />
-            <Label Content="Fim:" Grid.Row="0" Grid.Column="3" Margin="5 0 0 0" />
+            <Label Content="End date:" Grid.Row="0" Grid.Column="3" Margin="5 0 0 0" />
             <xctk:DateTimePicker Grid.Row="0" Grid.Column="4" ValueChanged="DateChanged"
                     x:Name="DateEnd" Format="Custom" FormatString="dd/MM/yyyy HH:mm tt" TextAlignment="Left" />
-            <CheckBox Content="Entradas" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center"
+            <CheckBox Content="Incomes" Grid.Row="0" Grid.Column="5" VerticalAlignment="Center"
                       Margin="10 0 0 0" x:Name="EntradaFilterCBox" Click="EntradaCheckBoxClick">
             </CheckBox>
-            <CheckBox Content="Saídas" Grid.Row="0" Grid.Column="6" VerticalAlignment="Center"
+            <CheckBox Content="Expenses" Grid.Row="0" Grid.Column="6" VerticalAlignment="Center"
                       Margin="0 0 3 0" x:Name="SaidaFilterCBox" Click="SaidaCheckBoxClick">
             </CheckBox>
             <ComboBox Grid.Row="0" Grid.Column="7" Margin="0 2 0 0"
@@ -50,7 +50,7 @@
         </Grid>
 
         <TabControl x:Name="TabControl" SelectionChanged="TabChanged">
-            <TabItem Header="Comuns">
+            <TabItem Header="Commons">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -70,7 +70,7 @@
                 >
                         <DataGrid.Columns>
 
-                            <DataGridTemplateColumn Header="Categoria">
+                            <DataGridTemplateColumn Header="Category">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -91,7 +91,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Data">
+                            <DataGridTemplateColumn Header="Date">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -103,7 +103,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Valor">
+                            <DataGridTemplateColumn Header="Value">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -115,7 +115,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Descrição">
+                            <DataGridTemplateColumn Header="Description">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -127,7 +127,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Tipo">
+                            <DataGridTemplateColumn Header="Type">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -143,7 +143,7 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Recorrentes">
+            <TabItem Header="Recurrents">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="35*" />
@@ -164,7 +164,7 @@
                 >
                         <DataGrid.Columns>
 
-                            <DataGridTemplateColumn Header="Categoria">
+                            <DataGridTemplateColumn Header="Category">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -185,7 +185,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Mês de Início">
+                            <DataGridTemplateColumn Header="Starting Month">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -197,7 +197,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Valor">
+                            <DataGridTemplateColumn Header="Value">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -209,7 +209,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Descrição">
+                            <DataGridTemplateColumn Header="Description">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -221,7 +221,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Tipo">
+                            <DataGridTemplateColumn Header="Type">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock

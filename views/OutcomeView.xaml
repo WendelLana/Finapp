@@ -24,7 +24,7 @@
                 Grid.Column="0"
                 FontSize="18" 
                 FontWeight="Bold" 
-                >Gastos</TextBlock>
+                >Expenses</TextBlock>
             <Button 
                 x:Name="AddBtn"
                 HorizontalAlignment="Right" 
@@ -34,11 +34,11 @@
                 Margin="0 0 10 0"
                 Padding="10 5 10 5"
                 Click="AddBtn_Click"
-                >Cadastrar</Button>
+                >Add New</Button>
         </Grid>
 
         <TabControl>
-            <TabItem Header="Gastos Comuns">
+            <TabItem Header="Common Expenses">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -58,7 +58,7 @@
                 
                         >
                         <DataGrid.Columns>
-                            <DataGridTemplateColumn Header="Categoria">
+                            <DataGridTemplateColumn Header="Category">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -79,7 +79,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Data">
+                            <DataGridTemplateColumn Header="Date">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -91,7 +91,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Valor">
+                            <DataGridTemplateColumn Header="Value">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -103,7 +103,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Descrição">
+                            <DataGridTemplateColumn Header="Description">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -115,7 +115,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Tipo">
+                            <DataGridTemplateColumn Header="Type">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -127,7 +127,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Ações">
+                            <DataGridTemplateColumn Header="Actions">
 
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -139,8 +139,8 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition />
                                             </Grid.RowDefinitions>
-                                            <Button Margin="0 0 5 0" Grid.Row="0" Grid.Column="0" Content="Editar" Click="EditBtn_Click"/>
-                                            <Button Margin="5 0 0 0" Grid.Row="0" Grid.Column="1" Content="Remover" Click="RemoveBtn_Click"/>
+                                            <Button Margin="0 0 5 0" Grid.Row="0" Grid.Column="0" Content="Edit" Click="EditBtn_Click"/>
+                                            <Button Margin="5 0 0 0" Grid.Row="0" Grid.Column="1" Content="Remove" Click="RemoveBtn_Click"/>
                                         </Grid>
 
                                     </DataTemplate>
@@ -152,7 +152,7 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Gastos Recorrentes">
+            <TabItem Header="Recurring Expenses">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="36*" />
@@ -173,7 +173,7 @@
                 
                         >
                         <DataGrid.Columns>
-                            <DataGridTemplateColumn Header="Categoria">
+                            <DataGridTemplateColumn Header="Category">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -194,7 +194,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Mês de Início">
+                            <DataGridTemplateColumn Header="Starting Date">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -206,7 +206,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Valor">
+                            <DataGridTemplateColumn Header="Value">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -218,7 +218,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Descrição">
+                            <DataGridTemplateColumn Header="Description">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -230,7 +230,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Tipo">
+                            <DataGridTemplateColumn Header="Type">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
@@ -242,7 +242,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Header="Ações">
+                            <DataGridTemplateColumn Header="Actions">
 
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -254,8 +254,8 @@
                                             <Grid.RowDefinitions>
                                                 <RowDefinition />
                                             </Grid.RowDefinitions>
-                                            <Button Margin="0 0 5 0" Grid.Row="0" Grid.Column="0" Content="Editar" Click="EditBtn_Click"/>
-                                            <Button Margin="5 0 0 0" Grid.Row="0" Grid.Column="1" Content="Remover" Click="RemoveBtn_Click"/>
+                                            <Button Margin="0 0 5 0" Grid.Row="0" Grid.Column="0" Content="Edit" Click="EditBtn_Click"/>
+                                            <Button Margin="5 0 0 0" Grid.Row="0" Grid.Column="1" Content="Remove" Click="RemoveBtn_Click"/>
                                         </Grid>
 
                                     </DataTemplate>

@@ -33,9 +33,9 @@ namespace ControleFinanceiro
         public void updateBalanceText()
         {
             this.balance = _transactionController.GetBalance();
-            SaldoText.Text = $"R${string.Format("{0:0.00}", Convert.ToDecimal(this.balance))}";
+            SaldoText.Text = $"${string.Format("{0:0.00}", Convert.ToDecimal(this.balance))}";
             this.monthBalance = _transactionController.GetBalanceMonth();
-            SaldoMesText.Text = $"R${string.Format("{0:0.00}", Convert.ToDecimal(this.monthBalance))}";
+            SaldoMesText.Text = $"${string.Format("{0:0.00}", Convert.ToDecimal(this.monthBalance))}";
 
             var redBrush = (Brush)new BrushConverter().ConvertFromString("#FFFF0000");
             var greenBrush = (Brush)new BrushConverter().ConvertFromString("#FF008000");
@@ -96,7 +96,7 @@ namespace ControleFinanceiro
                 SaldoRestanteStack.Visibility = Visibility.Visible;
 
                 var saldoRestante = this.monthBalance - Convert.ToDecimal(MetaTextBox.Text);
-                SaldoRestanteText.Text = $"R${string.Format("{0:0.00}", Convert.ToDecimal(saldoRestante))}";
+                SaldoRestanteText.Text = $"${string.Format("{0:0.00}", Convert.ToDecimal(saldoRestante))}";
 
                 var redBrush = (Brush)new BrushConverter().ConvertFromString("#FFFF0000");
                 var greenBrush = (Brush)new BrushConverter().ConvertFromString("#FF008000");

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControleFinanceiro.views"
         mc:Ignorable="d"
-        Title="Gerenciar Categoria" Width="400" Height="250"
+        Title="Category" Width="400" Height="250"
         WindowStartupLocation="CenterScreen"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
@@ -95,10 +95,10 @@
                     <ColumnDefinition Width="80*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Content="Nome" Margin="0,0,0,0" Grid.RowSpan="2" />
+                <Label Grid.Row="0" Grid.Column="0" Content="Name" Margin="0,0,0,0" Grid.RowSpan="2" />
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding name}" Grid.ColumnSpan="2" Margin="0,0,0,0" Grid.RowSpan="2" Name="CatName" />
 
-                <Label Grid.Row="1" Grid.Column="0" Content="Cor" Margin="0,0,0,0" Grid.RowSpan="2" />
+                <Label Grid.Row="1" Grid.Column="0" Content="Color" Margin="0,0,0,0" Grid.RowSpan="2" />
                 <TextBox 
                     Grid.Row="1" 
                     Grid.Column="1" 
@@ -109,10 +109,10 @@
                     />
                 <xctk:ColorPicker
                     Grid.Row="1" Grid.Column="2"
-                    SelectedColor="{Binding color}"    
+                    SelectedColor="{Binding color}"
                 ></xctk:ColorPicker>
 
-                <Label Grid.Row="2" Grid.Column="0" Content="Tipo" Margin="0,0,0,0" Grid.RowSpan="2" />
+                <Label Grid.Row="2" Grid.Column="0" Content="Type" Margin="0,0,0,0" Grid.RowSpan="2" />
                 <ComboBox 
                     x:Name="transactionTypeComboBox" 
                     Grid.Row="2" 
@@ -120,7 +120,7 @@
                     Grid.ColumnSpan="2"
                     ></ComboBox>
 
-                <Label Grid.Row="3" Grid.Column="0" Content="Ícone" Margin="0,0,0,0" Grid.RowSpan="2" />
+                <Label Grid.Row="3" Grid.Column="0" Content="Icon" Margin="0,0,0,0" Grid.RowSpan="2" />
                 <ComboBox x:Name="IconsComboBox" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"></ComboBox>
 
                 <Button 
@@ -132,7 +132,7 @@
                     VerticalAlignment="Center"
                     Click="ConfirmBtn" 
                     Grid.Column="1"
-                    >Confirmar</Button>
+                    >Save</Button>
             </Grid>
         </StackPanel>
     </Grid>

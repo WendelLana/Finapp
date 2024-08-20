@@ -42,14 +42,14 @@ namespace ControleFinanceiro.views
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            var formWindow = new FormOutcome("Cadastrar Gasto", new Transaction(), "cadastrar");
+            var formWindow = new FormOutcome("New Expense", new Transaction(), "cadastrar");
             formWindow.Show();
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             Transaction? selectedOutcome = (sender as FrameworkElement).DataContext as Transaction;
-            var formWindow = new FormOutcome("Editar Gasto", selectedOutcome, "editar");
+            var formWindow = new FormOutcome("Edit Expense", selectedOutcome, "editar");
             formWindow.Show();
         }
 

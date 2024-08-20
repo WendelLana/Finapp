@@ -33,7 +33,7 @@ namespace ControleFinanceiro.views
             // Inicializa a Combo Box de filtros por categoria
             CategoryFilterCBox.SelectedValuePath = "Key";
             CategoryFilterCBox.DisplayMemberPath = "Value";
-            CategoryFilterCBox.Items.Add(new KeyValuePair<Category, string>(null, "Todas Categorias"));
+            CategoryFilterCBox.Items.Add(new KeyValuePair<Category, string>(null, "All Categories"));
             List<Category> categoriesList = categoryController.GetAll().OrderBy(c => c.name).ToList();
             foreach (var c in categoriesList)
             {

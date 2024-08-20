@@ -39,8 +39,8 @@ namespace ControleFinanceiro.views
             // Coloca as opções de tipo de transação
             transactionTypeComboBox.SelectedValuePath = "Key";
             transactionTypeComboBox.DisplayMemberPath = "Value";
-            transactionTypeComboBox.Items.Add(new KeyValuePair<string, string>("I", "Entrada"));
-            transactionTypeComboBox.Items.Add(new KeyValuePair<string, string>("O", "Saída"));
+            transactionTypeComboBox.Items.Add(new KeyValuePair<string, string>("I", "Income"));
+            transactionTypeComboBox.Items.Add(new KeyValuePair<string, string>("O", "Expense"));
 
             // Instancia todas as opções de ícones e faz o bind com o valor do seletor de cor
             availableIcons.ToList().ForEach(val =>
@@ -83,15 +83,15 @@ namespace ControleFinanceiro.views
             var selectedIndex = IconsComboBox.SelectedIndex;
             if (CatName.Text.Length == 0)
             {
-                MessageBox.Show("Nome é obrigatório!", "Alerta", MessageBoxButton.OK);
+                MessageBox.Show("Name is required!", "Alert", MessageBoxButton.OK);
                 return;
             } else if (transactionTypeComboBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Tipo é obrigatório!", "Alerta", MessageBoxButton.OK);
+                MessageBox.Show("Type is required!", "Alert", MessageBoxButton.OK);
                 return;
             } else if (selectedIndex == -1)
             {
-                MessageBox.Show("Ícone é obrigatório!", "Alerta", MessageBoxButton.OK);
+                MessageBox.Show("Icon is required!", "Alert", MessageBoxButton.OK);
                 return;
             }
             var selectedIcon = CategoryController.GetAvailableCategoriesMahIcons().ToList()[selectedIndex];
